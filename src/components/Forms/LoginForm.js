@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 export default function LoginForm() {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
-        // fetch('/api/signup', {
+        // fetch('/api/v1/signup', {
         //     method: 'POST',
         //     body: JSON.stringify({ data }),
         //     headers: { 'Content-Type': 'application/json' },

@@ -15,7 +15,7 @@ import Button from 'react-bootstrap/Button';
 export default function TransactionForm() {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
-        fetch('/api/v1/transactions', {
+        fetch('/transactions', {
             method: 'POST',
             body: JSON.stringify(data),
             headers: { 'Content-Type': 'application/json' },

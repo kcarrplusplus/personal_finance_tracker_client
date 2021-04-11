@@ -9,6 +9,7 @@ import {
 import LoginForm from './Forms/LoginForm';
 import SignupForm from './Forms/SignupForm';
 import TransactionForm from './Forms/CreateTransaction';
+import AccountHome from './AccountHome';
 
 const NavMenuHome = () => {
     return (
@@ -34,6 +35,11 @@ const NavMenuHome = () => {
                         <Link to="/transaction">Create Transaction</Link>
                     </Nav.Link>
                 </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link>
+                        <Link to="/account">Account Home</Link>
+                    </Nav.Link>
+                </Nav.Item>
             </Nav>
 
             <Switch>
@@ -45,6 +51,9 @@ const NavMenuHome = () => {
                 </Route>
                 <Route path="/transaction">
                     <TransactionForm />
+                </Route>
+                <Route path="/account">
+                    <AccountHome />
                 </Route>
                 {/* <Route path="/">
                     <Home />
