@@ -12,16 +12,20 @@ import Button from 'react-bootstrap/Button';
  * amount
  */
 
-export default function TransactionForm() {
+const TransactionForm = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => {
-        fetch('/transactions', {
-            method: 'POST',
-            body: JSON.stringify(data),
-            headers: { 'Content-Type': 'application/json' },
-        })
-            .then(res => res.json());
-        console.log(data);
+    const onSubmit = async (data) => {
+        try {
+            const response = await fetch('http://localhost:8080/api/v1/transactions', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: { 'Content-Type': 'application/json'}
+            });
+            window.location = "/account";
+        } catch (err) {
+            console.error(err.message);
+        }
+        
     };
     
     return (
@@ -80,3 +84,5 @@ export default function TransactionForm() {
         </Form>
     );
 };
+
+export default TransactionForm;
